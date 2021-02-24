@@ -1,29 +1,26 @@
-package guv;
+import java.util.ArrayList;
+import java.util.Scanner;
 
-import java.util.*; 
-
-public class print_primebetween_range{
-	static ArrayList<Long> isprime(long n) {
-		ArrayList<Long> ls=new ArrayList<>();
-		
-		long lmt=(long) Math.sqrt(n)+1;
-		for(long i=1;i<=n;i++) {
-			
-			int flag=0;
-			for(long j=2;j<lmt;j++) {	//sqrt(n) time complexity
-				if(i%j==0 && i!=j) {
-					flag=1;
-					break;
-				}
-			}
-			if(flag==0)
-				ls.add(i);
-		}
-		return ls;
+public class print_primebetween_range {
+	static boolean isprime(long n) {
+		int flag=0;
+    	
+    	long lmt=(long)Math.sqrt(n)+1;
+		for(long j=2;j<lmt;j++) 	//sqrt(n) time complexity
+			if(n%j==0)
+				return false;
+		return true;
 	}
-	public static void main(String[] args) {
-		Scanner sc = new Scanner(System.in);
-		
-		System.out.print(isprime(sc.nextLong()));
-	}
+    public static void main(String[] args) {
+    	Scanner sc = new Scanner(System.in);
+    	ArrayList<Long> ls=new ArrayList<>();
+    	
+    	long range=sc.nextLong();
+    	
+    	for(long i=1;i<=range;i++) {
+    		if(isprime(i))
+    			ls.add(i);
+    	}
+    	System.out.print(ls);
+    }
 }

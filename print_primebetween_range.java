@@ -3,13 +3,12 @@ import java.util.Scanner;
 
 public class print_primebetween_range {
 	static boolean isprime(long n) {
-		int flag=0;
     	
     	long lmt=(long)Math.sqrt(n)+1;
-		for(long j=2;j<lmt;j++) 	//sqrt(n) time complexity
-			if(n%j==0)
-				return false;
-		return true;
+	for(long j=2;j<lmt;j++) 	//sqrt(n) time complexity
+		if(n%j==0)
+			return false;
+	return true;
 	}
     public static void main(String[] args) {
     	Scanner sc = new Scanner(System.in);

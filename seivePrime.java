@@ -10,7 +10,7 @@ public class seivePrime {
     	Arrays.fill(ls, true);
     	
     	ArrayList<Long> prime= new ArrayList<>();
-    	long lmt =(long)Math.sqrt(n);
+    	long lmt =(long)Math.sqrt(n)+1;
     	prime.add((long)1);
     	for(long i=2;i<n;i++) {
     		if(ls[(int) i]) {
